@@ -170,8 +170,9 @@ function renderInbox() {
 function renderSummary() {
   const tAct = sum(rows);
 
-  setText('total-spent',     fmt(tAct));
-  setText('total-remaining', fmt(TOTAL_BUDGET - tAct) + ' remaining');
+  setText('total-spent',       fmt(tAct));
+  setText('total-budget-label', fmt(TOTAL_BUDGET));
+  setText('total-remaining',   fmt(TOTAL_BUDGET - tAct) + ' remaining');
 
   const aPct = Math.min(tAct / TOTAL_BUDGET * 100, 100);
   setStyle('progress-actual', 'width', aPct + '%');
